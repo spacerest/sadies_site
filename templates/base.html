@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="alternate" type="application/rss+xml" title="Sadie Parker" href="/feed.xml">
+  <link rel="apple-touch-icon" href="" />
+  <link rel="icon" href=""/>
+  <link rel="shortcut icon" href="" />
+  <link rel="stylesheet" type="text/css" href="{% static "/website/assets/css/main.css" %}" />  
+  <!--style type="text/css">
+    html {
+      margin: 0 0 0 0;
+      padding: 0 0 0 0;
+      font-family: 'Palatino Linotype';
+      font-weight: 100;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    nav {
+      display: inline-block;  
+    }
+    .symbol {
+      font-size: 50px;
+    }
+    a:hover {
+      color: rgba(100,0,0,.5);
+    }
+    body {
+      height: 100%;
+      opacity: 0;
+      background-color: rgba(255,255,255,1);
+      margin: 0 0 0 0;
+      padding: 0 0 0 0;
+    }
+    .titles {
+      letter-spacing: 15px; 
+      background-color: rgba(225,225,225,1);
+      color: rgba(0,0,0,1);
+      padding: 1vh 2vw;
+    }
+    .title-words {
+      border: 2px solid rgba(255,255,255,1);
+      margin: 1vh 2vw;
+      display: inline-block;
+      padding: 2vh 2vw;
+      border-radius: 15px;
+      background-color: rgba(245,245,245,1);
+    }
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+    }
+    .content {
+      background-color: rgba(255,255,255,1);
+      height: 100%;
+      display: block;
+      margin: 0;
+      padding: 0;
+      display: block;
+    }
+    .wrap {
+      padding: 0 0 0 0;
+      margin: 0 0 0 0;
+      display: block;
+    }
+  </style-->
+  <title>{% block title %}Sadie Parker{% endblock %}</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+{% block skripts %}
+{% endblock %}
+</head>
+<body onload="document.body.style.opacity='1'">
+  <header class="titles">
+    <h1 class="title-words">Sadie Parker</h1>
+    <nav><a class="symbol" href="#">&#10006;</a></nav>  
+  </header>
+  <div class="content">
+    <p>test content here</p>
+  </div>
+</body>
+</html>

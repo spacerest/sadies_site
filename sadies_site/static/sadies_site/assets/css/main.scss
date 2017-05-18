@@ -1,0 +1,18 @@
+@import 'meyer_reset';
+$real-small: 400px;
+$on-palm: 700px;
+$on-laptop: 900px;
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+  @content;
+  }
+}
+html {
+  box-sizing: border-box;
+  font-family: "Tahoma", sans-serif;
+  font-size: 17px;
+  letter-spacing: 3px;
+  height: 100%;
+  background-color: red;
+}
+
