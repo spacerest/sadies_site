@@ -11,78 +11,46 @@
   <link rel="icon" href=""/>
   <link rel="shortcut icon" href="" />
   <link rel="stylesheet" type="text/css" href="{% static "/website/assets/css/main.css" %}" />  
-  <!--style type="text/css">
-    html {
-      margin: 0 0 0 0;
-      padding: 0 0 0 0;
-      font-family: 'Palatino Linotype';
-      font-weight: 100;
-    }
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-    nav {
-      display: inline-block;  
-    }
-    .symbol {
-      font-size: 50px;
-    }
-    a:hover {
-      color: rgba(100,0,0,.5);
-    }
-    body {
-      height: 100%;
-      opacity: 0;
-      background-color: rgba(255,255,255,1);
-      margin: 0 0 0 0;
-      padding: 0 0 0 0;
-    }
-    .titles {
-      letter-spacing: 15px; 
-      background-color: rgba(225,225,225,1);
-      color: rgba(0,0,0,1);
-      padding: 1vh 2vw;
-    }
-    .title-words {
-      border: 2px solid rgba(255,255,255,1);
-      margin: 1vh 2vw;
-      display: inline-block;
-      padding: 2vh 2vw;
-      border-radius: 15px;
-      background-color: rgba(245,245,245,1);
-    }
-    header {
-      position: fixed;
-      width: 100%;
-      top: 0;
-    }
-    .content {
-      background-color: rgba(255,255,255,1);
-      height: 100%;
-      display: block;
-      margin: 0;
-      padding: 0;
-      display: block;
-    }
-    .wrap {
-      padding: 0 0 0 0;
-      margin: 0 0 0 0;
-      display: block;
-    }
-  </style-->
   <title>{% block title %}Sadie Parker{% endblock %}</title>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="{% static "/website/scripts/animation.js" %}"></script>
+<svg height="0">
+  <filter id="f1">
+    <feGaussianBlur stdDeviation="1"/>
+  </filter>
+</svg>
+    
 {% block skripts %}
 {% endblock %}
 </head>
-<body onload="document.body.style.opacity='1'">
-  <header class="titles">
-    <h1 class="title-words">Sadie Parker</h1>
-    <nav><a class="symbol" href="#">&#10006;</a></nav>  
-  </header>
-  <div class="content">
-    <p>test content here</p>
+<body>
+<nav class="{% block nav-selection %}home{% endblock %}">
+<div class="top-nav grid">
+    <div class="work">work
+    </div>
+    <div class="contact">contact
+    </div>
+    <div class="writing">writing
+    </div>
+    <div class="other">other
+    </div>
+</div>
+</nav>
+<div class="glass" style="background-size: 100% 100%; background-image: url('{% static '/website/assets/images/bg.jpg' %}');"></div>
+<div class="bg gauss-filter"  ></div>
+<header class="grid">
+<h1>Sadie Parker</h1>
+<h2>Content > Further Details</h2>
+</header>
+<div class="wrap">
+
+  <div class="page">
+    <div class="content">
+  
+    </div>
   </div>
+</div>
 </body>
+      
+
 </html>
