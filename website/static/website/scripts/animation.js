@@ -1,3 +1,61 @@
+/*document.addEventListener('click', function(event) {
+        var isClickInside = document.getElementById('top-nav').contains(event.target);
+        if (isClickInside) {
+	  if(document.getElementById('lower-nav').style.display=='grid'){
+                document.getElementById('lower-nav').style.display='none';
+		document.getElementById('top-arrow-one').classList.remove('down-arrow');
+		document.getElementById('top-arrow-two').classList.remove('down-arrow');
+            }
+            else{ 
+                document.getElementById('lower-nav').style.display='grid';
+		document.getElementById('top-arrow-one').classList.add('down-arrow');
+		document.getElementById('top-arrow-two').classList.add('down-arrow');
+	    };
+        }
+        else {
+	  if(document.getElementById('lower-nav').style.display=='grid'){
+	    document.getElementById('lower-nav').style.display='none';
+	    document.getElementById('top-arrow-one').classList.remove('down-arrow');
+	    document.getElementById('top-arrow-two').classList.remove('down-arrow');
+	  };
+	};
+        });
+*/
+function draw(){
+var useF = document.getElementById("cvs");
+	if (useF.getContext){
+	  var ctx = useF.getContext("2d");
+	  ctx.fill();
+	  for(var i=20; i>0;i--){
+	    var rectum = new Path2D();
+	    ctx.fillStyle= randomColor();
+	    
+	    rectum.rect(5, 5, Math.PI ** (i), i*10);
+	    //ctx.stroke(rectum);
+	    ctx.fill();
+	  }
+	  //ctx.beginPath();
+	  //ctx.moveTo(10,5);
+	  //ctx.lineTo(10,90);
+	  //ctx.lineTo(290,90);
+	  //ctx.lineTo(290,5);
+	  //ctx.fillStyle = "rgba(0,0,0,1)";
+	  //ctx.fill()
+	  //ctx.rect(50,50,50,50);
+	  ///ctx.moveTo(10,5);
+	  //ctx.fillStyle = "rgba(200,100,0,1)";
+	  //ctx.fill();
+	}
+}
+
+function gradColor(i,j) {
+	var red = Math.floor(255-32.5*i);
+	var blue = Math.floor(255-12.5*j);
+	var green = 0;
+	var color = "rgba(" + red + "," + green + "," + blue + "," + 1 + ")";
+	return color;
+}
+
 function randomColor(){
   var red = Math.floor(Math.random()*255);
   var green = Math.floor(Math.random()*255);
@@ -9,84 +67,4 @@ function random(x){
   var rando = Math.random()*x;
   return rando;
 }
-  
-function corner(){
-  var corn = [];
-  for (var i = 0; i < 3; i++){
-	  corn[i]=Math.floor(random(4)+1);
-          while (corn[i]===corn[i-1]||corn[i]===corn[i-2]){
-      corne = Math.floor(random(4))+1;
-      corn[i] = corne;
-    }
-  }
-        return corn;
-}
-
-function coordinates(){
-  var xc = [];
-  var yc = [];
-  var corn = corner();
-  for (var i in corn){
-    if (corn[i]%2===1){
-      xc[i] = Math.ceil(random(6));
-    } else {
-      xc[i] = Math.floor(random(6)+30);
-    }
-  }
-  for (var j in corn){
-    if (corn[j]<3){
-      yc[j] = Math.ceil(random(6));
-    } else {
-      yc[j] = Math.floor(random(6)+30);
-    }
-  }
-  var xcObj = {
-    xc1 : xc[0],
-    xc2 : xc[1],
-    xc3 : xc[2]
-  }
-  var ycObj = {
-    yc1 : yc[0],
-    yc2 : yc[1],
-    yc3 : yc[2]
-  };
-  var coordObj = [xcObj,ycObj];
-  return coordObj;
-}
-
-function triDesign(){
-  var tritop = document.getElementById("tri-top");
-  var tribottom = document.getElementById("tri-bottom");
-  topAndBottom(tritop);
-  topAndBottom(tribottom);
-}
-
-function topAndBottom(t){
-  if (t.getContext){
-  var ctx = t.getContext("2d");
-  var rounds = 0; 
-  
-  for (var r = -100; r < 5000; r+=36){
-    rounds += 1;  
-    ctx.fillStyle = randomColor();
-    ctx.strokeStyle = randomColor();
-    /*ctx.beginPath();
-    ctx.moveTo(r,0);
-    ctx.lineTo(r,36);
-    ctx.stroke();*/
-  
-    var coordObj = coordinates();
-    var xcObj = coordObj[0];
-    var ycObj = coordObj[1];
-
-    ctx.beginPath();
-    ctx.moveTo(xcObj.xc1 + (rounds-1)*36,ycObj.yc1);
-    ctx.lineTo(xcObj.xc2 + (rounds-1)*36,ycObj.yc2);
-    ctx.lineTo(xcObj.xc3 + (rounds-1)*36,ycObj.yc3);
-    ctx.closePath();
-    ctx.fill();
-  
-
-    } 
-}}
 
