@@ -4,3 +4,6 @@ from django.http import HttpResponseRedirect
 
 def index(request):
     return render(request, 'index.html')
+
+def findpage(request, nav):
+    return render(request, '%s.html' % nav, {'page_title': 'Home', 'nav':nav})
