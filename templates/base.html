@@ -12,7 +12,7 @@
   <link rel="shortcut icon" href="" />
   <link rel="stylesheet" type="text/css" href="{% static "/website/assets/css/main.css" %}" />  
   <title>{% block title %}Sadie Parker{% endblock %}</title>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<!-!---script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script-->
 <script src="{% static "/website/scripts/animation.js" %}"></script>
 <svg height="0">
   <filter id="f1">
@@ -23,34 +23,43 @@
 {% block skripts %}
 {% endblock %}
 </head>
-<body>
+<body id="{% block page %}{% endblock %}" onload="window.document.getElementById('body-load').style.opacity='1';">
+{% block loadinggif %}{% endblock %}
+<div id="body-load">
+{% block loadedgif %}{% endblock %}
 <nav class="{% block nav-selection %}home{% endblock %}">
-<div class="top-nav grid">
-    <div class="work">work
-    </div>
-    <div class="contact">contact
-    </div>
-    <div class="writing">writing
-    </div>
-    <div class="other">other
-    </div>
+<div id="top-nav" class="grid">
+    <a href="/" class="pretty"></a>
+    <a href="/hello/" class="hello">hello
+    </a>
+    <a href="/work/" class="work">work
+    </a>
+    <a href="/other/" class="other">hiiii
+    </a>
+</div>
 </div>
 </nav>
-<div class="glass" style="background-size: 100% 100%; background-image: url('{% static '/website/assets/images/bg.jpg' %}');"></div>
-<div class="bg gauss-filter"  ></div>
-<header class="grid">
-<h1>Sadie Parker</h1>
-<h2>Content > Further Details</h2>
-</header>
 <div class="wrap">
-
+<div class="placeholder">hello?</div>
   <div class="page">
-    <div class="content">
-  
-    </div>
+<header>
+<div class="header-wrap grid">
+  <h1>Sadie Parker</h1>
+    {% if nav %}
+      <h2>{% block pagetitle %}{{ nav }} > {{ nav }}{% endblock %}</h2>
+	{% else %}
+<h2>welcome</h2>
+{% endif %}
+</div>
+</header>
+
+
+<div class="content">
+  {% block content %}
+      nothing here, check back tomorrow
+  {% endblock %}
+</div>
   </div>
 </div>
 </body>
-      
-
 </html>
