@@ -14,11 +14,6 @@
   <title>{% block title %}Sadie Parker{% endblock %}</title>
 <!-!---script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script-->
 <script src="{% static "/website/scripts/animation.js" %}"></script>
-<svg height="0">
-  <filter id="f1">
-    <feGaussianBlur stdDeviation="1"/>
-  </filter>
-</svg>
     
 {% block skripts %}
 {% endblock %}
@@ -29,10 +24,10 @@
 {% block loadedgif %}{% endblock %}
 <nav class="{% block nav-selection %}home{% endblock %}">
 <div id="top-nav" class="grid">
-    <a href="/" class="pretty"></a>
+    <a href="/" class="pretty"><img src="{% static "/website/assets/images/bug_logo.png" %}" /></a>
     <a href="/hello/" class="hello">hello
     </a>
-    <a href="/work/" class="work">work
+    <a href="/projects/" class="work">projects
     </a>
     <a href="/other/" class="other">hiiii
     </a>
@@ -40,13 +35,11 @@
 </div>
 </nav>
 <div class="wrap">
-<div class="placeholder">hello?</div>
   <div class="page">
 <header>
 <div class="header-wrap grid">
-  <h1>Sadie Parker</h1>
     {% if nav %}
-      <h2>{% block pagetitle %}{{ nav }} > {{ nav }}{% endblock %}</h2>
+      <h2>{% block pagetitle %}{{ nav }}{% endblock %}</h2>
 	{% else %}
 <h2>welcome</h2>
 {% endif %}
