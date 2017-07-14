@@ -240,4 +240,12 @@ nav {
   grid-row-end: 50;
   text-align: center; }
 
+.square {
+  height: 200px;
+  width: 200px;
+  display: inline-block;
+  margin: 20px;
+  background-color: #45ef90;
+  border: 2px solid black; }
+
 /*# sourceMappingURL=main.css.map */
