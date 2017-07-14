@@ -247,5 +247,8 @@ nav {
   margin: 20px;
   background-color: #45ef90;
   border: 2px solid black; }
+  .square img {
+    height: 100%;
+    width: 100%; }
 
 /*# sourceMappingURL=main.css.map */
