@@ -19,21 +19,18 @@
 {% endblock %}
 </head>
 <body id="{% block page %}{% endblock %}" onload="window.document.getElementById('body-load').style.opacity='1';">
-{% block loadinggif %}{% endblock %}
-<div id="body-load">
-{% block loadedgif %}{% endblock %}
 <nav class="{% block nav-selection %}home{% endblock %}">
 <div id="top-nav" class="grid">
-    <a href="/" class="pretty"><img src="{% static "/website/assets/images/face_logo3.png" %}" /></a>
-    <a href="/hello/" class="hello">hello
+    <a href="/" class="pretty"><img src="{% static "/website/assets/images/face_logo.png" %}" /></a>
+    <a href="/about/" class="about">about
     </a>
     <a href="/projects/" class="work">projects
     </a>
-    <a href="/other/" class="other">hiiii
+    <a href="/other/" class="other">other
     </a>
 </div>
-</div>
 </nav>
+<div id="body-load">
 <div class="wrap">
   <div class="page">
 <header>
@@ -41,7 +38,7 @@
     {% if nav %}
       <h2>{% block pagetitle %}{{ nav }}{% endblock %}</h2>
 	{% else %}
-<h2>welcome</h2>
+<h2>hello</h2>
 {% endif %}
 </div>
 </header>
@@ -51,8 +48,16 @@
   {% block content %}
       nothing here, check back tomorrow
   {% endblock %}
-</div>
+  </br>
+<footer style='background-repeat: no-repeat; background-image: url("{% static '/website/assets/images/upside_down.png' %}")'>
+  <div class="social-media">
+    <a target="_blank" href="http://github.com/spacerest">gh</a></br>
+    <a target="_blank" href="http://twitter.com/spacerest0">twitter</a></br>
+    <a target="_blank" href="mailto:sadiemparker@gmail.com">email</a></br>
   </div>
+</footer>
+</div>
+</div>
 </div>
 </body>
 </html>
