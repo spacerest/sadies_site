@@ -5,16 +5,31 @@
 {% block content %}
 
 {% if projects %}
-
+<div class="projects">
 {% for project in projects %}
+<div class="project">
+<div class="info">
+<h3>{{ project.title }}</h3>
+<ul>
+<li>Description: {{ project.description }}</li>
+<li>Setup: {{ project.tools_used }}</li>
+<li>Last updated: {{ project.last_updated }}</li>
+</ul>
+</div>
 <a href="{{ project.link }}" target="_blank" >
   <div class="square">
     {% with '/website/assets/images/'|add:project.image_name|add:'.png' as image_path %}
-        <img src="{% static image_path %}" />
+	<div class="overlay">
+          <img src="{% static image_path %}" />
+	  <div class="inner-text">
+	    	<p>view project</p>
+	  </div>
+	  </div>
     {% endwith %}
   </div>
 </a>
-
+</div>
 {% endfor %}
 {% endif %}
+</div>
 {% endblock %}
