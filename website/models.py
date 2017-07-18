@@ -5,7 +5,13 @@ from django.db import models
 
 # Create your models here.
 
+class ProjectType(models.Model):
+    title = models.CharField(max_length = 1000)
+    def __str__(self):
+        return self.title
+
 class Project(models.Model):
+    project_type = models.ForeignKey(ProjectType, models.SET_NULL, null=True,blank=True)
     title = models.CharField(max_length = 1000000, null = True, blank = True)
     description = models.TextField(max_length = 1000000, null = True, blank = True)
     link = models.URLField(max_length = 1000000, default = "https://sadieparker.net")
@@ -14,4 +20,3 @@ class Project(models.Model):
     tools_used = models.CharField(max_length = 100000, null = True, blank = True)
     def __str__(self):
         return self.title
-

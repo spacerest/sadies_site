@@ -1,19 +1,29 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block page %}about{% endblock %}
-
+{% block subnav %}
+{% for project_type in project_types %}
+   <a href="#{{ project_type.lower.split|join:'-' }}">{{ project_type.lower }}<span> &#9733 </span></a>
+{% endfor %}
+{% endblock %}
 {% block content %}
 
-{% if projects %}
+{% if project_types %}
 <div class="projects">
+{% for project_type, projects in project_types.items %}
+{% if project_type %}
+<h3 class="sub-title" id="{{project_type.lower.split|join:'-'}}">{{ project_type.lower }}</h3>
 {% for project in projects %}
 <div class="project">
-<div class="info">
-<h3>{{ project.title }}</h3>
+<div class="descrip">
 <ul>
-<li>Description: {{ project.description }}</li>
-<li>Setup: {{ project.tools_used }}</li>
-<li>Last updated: {{ project.last_updated }}</li>
+<li class="descrip"><h4>{{ project.description }}</h4></li>
+</ul>
+</div>
+<div class="info">
+<ul>
+<li><h4>Tools</h4><h5>{{ project.tools_used }}</h5></li>
+<li><h4>Last updated</h4><h5>{{ project.last_updated }}</h5></li>
 </ul>
 </div>
 <a href="{{ project.link }}" target="_blank" >
@@ -29,6 +39,8 @@
   </div>
 </a>
 </div>
+{% endfor %}
+{% endif %}
 {% endfor %}
 {% endif %}
 </div>
