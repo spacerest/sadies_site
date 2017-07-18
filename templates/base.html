@@ -34,12 +34,13 @@
 <div class="wrap">
   <div class="page">
 <header>
-<div class="header-wrap grid">
+<div class="header-wrap">
     {% if nav %}
       <h2>{% block pagetitle %}{{ nav }}{% endblock %}</h2>
 	{% else %}
 <h2>hello</h2>
 {% endif %}
+<div class="subnav">{% block subnav %}{% endblock %}</div>
 </div>
 </header>
 
@@ -59,5 +60,7 @@
 </div>
 </div>
 </div>
+<script type="text/javascript">
+</script>
 </body>
 </html>

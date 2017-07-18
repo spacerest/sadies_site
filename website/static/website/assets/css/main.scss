@@ -1,16 +1,17 @@
 @import 'meyer_reset';
 $spacing-unit: 5px;
 $nav-width: 200px;
-$on-palm: 600px;
+$on-palm: 800px;
 $on-laptop: 900px;
 $header-height: 22px;
 $font-color: rgba(0,0,0,1);
 $soft-font: rgba(0,0,0,0.5);
-$header-font-size: 30px;
+$header-font-size: 40px;
 $main-font-size: 17px;
 $background-color: rgba(255,255,255,1);
 $highlight-color: rgba(100,100,100,0.5); 
 $soft-background: rgba(255,255,255,0.5);
+$highlight: rgba(79,115,153,1);
 @mixin media-query($device) {
   @media screen and (max-width: $device) {
   @content;
@@ -77,15 +78,32 @@ html {
 	margin: $spacing-unit*2;
 	padding: $spacing-unit * 3;
 	h2 {
-          font-size: 30px;
+          font-size: $header-font-size;
 	}
 	@include media-query($on-palm){
 	  margin-top: $header-height * 2;
+	}
+	.subnav {
+	   margin-top: 10px;
+           a {
+             display: inline-block;
+             padding: 2px;
+             &:hover {
+	       background-color: $soft-font;
+               color: $background-color;
+               transition: .1s ease-in;
+	     }
+	   }
 	}
       }
     }
     .content {
       width: 100%;
+      margin-top: 40px;
+      h3 {
+        font-size: $main-font-size*1.5;
+        margin-bottom: 20px;
+      }
     }
   }
   footer {
@@ -110,7 +128,7 @@ html {
   }
 }
 nav {
-  height: 100vh;//$header-height*2;
+  height: 100vh;
   background-color: $background-color;
   position: fixed;
   top: 0;
@@ -223,9 +241,22 @@ h1 {
   }
 }
 
+.sub-title {
+    width: 100%;
+    border-bottom: 2px solid $font-color;
+    line-height: $header-font-size*2;
+  }
+
 .projects{
   display: inline-block;
-  .project {
+    background-color: $highlight;
+    padding: 15px;
+    color: $background-color;
+    .project {
+    border-radius: 15px;
+    color: $font-color;
+    padding: 15px;
+    background-color: $background-color;
     display: inline-block;
     width: 100%;
     padding-bottom: 25px;
@@ -233,24 +264,43 @@ h1 {
     @include media-query($on-palm){
       text-align: center;
     }
-        .info {
-	  float: left;
+    .descrip, .info {
 	  display: inline-block;
-	  width: 50%;
+     }
+        .descrip {
+           width: 100%;
+           margin-bottom: 19px;
+           text-align: center;
+         }
+        .info {
+          float: left;
+	  width: 55%;
 	  text-align: left;
+          line-height: $main-font-size*1.2;
+          margin-top: 6vw;
+          h4 {
+            font-weight: 600;
+          }
 	  @include media-query($on-palm){
 	    width: 100%;
+            padding-bottom: 20px;
+	    margin-top: 0;
 	  }
-
+        }
           h3 {
             padding: 5px;
-	    padding-left: 20px;
+	    padding-left: 10px;
             font-size: $header-font-size*0.7;}
           li {
 	    font-size: $main-font-size*0.8;
-	    padding: 10px;
-	    padding-left: 20px;
-            }}
+           h4 {
+	    margin-left: 10px;
+           }
+           h5 {
+            margin-left: 20px; 
+            font-style: italic;
+           }
+         }
     .square {
       float: right;
       height: 20vw;
@@ -258,19 +308,20 @@ h1 {
       display: inline-block;
       margin: 2px;
       @include media-query($on-palm){
-	width: 65vw;
-	height: 65vw;
+	width: 55vw;
+	height: 55vw;
 	float: none;
       }
           .overlay {
+            background-color: red;
 	    float: left;
             height: 20vw;
             width: 20vw;
 	    position: relative;
             display: inline-block;
 		 @include media-query($on-palm){
-		    width: 65vw;
-		    height: 65vw; 
+		    width: 55vw;
+		    height: 55vw; 
 		  }
             &:hover {
 	      background-color: $soft-font;
@@ -281,13 +332,13 @@ h1 {
           	  height: 20vw;
           	  display: inline-block;
           	  text-align: center;
-          	  z-index: -1;
+          	  z-index: 1;
 		  position: absolute;
 		  top: 0;
 		  left: 0;
 		  @include media-query($on-palm){
-		    width: 65vw;
-		    height: 65vw; 
+		    width: 55vw;
+		    height: 55vw; 
 		  }
           	}
 	      .inner-text {
@@ -295,14 +346,14 @@ h1 {
 		height: 20vw;
 		position: absolute;
 		display: inline-block;
-		z-index: 1;
+	        z-index: 2;
 		top: 0;
 		left: 0;
 		color: $background-color;
 		text-align: center;
 		 @include media-query($on-palm){
-		    width: 65vw;
-		    height: 65vw; 
+		    width: 55vw;
+		    height: 55vw; 
 		  }
 		p {
 		  display: none;
@@ -325,4 +376,17 @@ h1 {
 		}
 		}}}
 }}
-    
+   
+#butt {
+  background-color: $soft-font;
+  color: $background-color;
+  padding: 4px 20px;
+  margin: 40px;
+  border-radius: 10px;
+  font-size: $main-font-size*1.2;
+  font-family: 'Times New Roman';
+  &:hover {
+    background-color: $highlight;
+    transition: .2s ease-in;
+  }
+} 
