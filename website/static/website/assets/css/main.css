@@ -125,10 +125,11 @@ html {
       margin-left: 80px; }
       .wrap footer .social-media a {
         color: black;
-        background-color: rgba(255, 255, 255, 0.5);
-        padding: 5px; }
+        background-color: white;
+        padding: 5px;
+        border: 2px solid black; }
         .wrap footer .social-media a:hover {
-          background-color: white;
+          background-color: #c7d5ed;
           transition: .2s ease-in; }
 
 nav {
@@ -147,6 +148,9 @@ nav {
       display: block;
       font-size: 17px; } }
 
+@media screen and (max-width: 800px) {
+  #top-nav {
+    box-shadow: 1px 0px 4px #0d0d0d; } }
 #top-nav:hover {
   transition: .2s ease-in; }
 
@@ -161,8 +165,9 @@ nav {
     grid-column-start: 1;
     grid-column-end: 101;
     grid-row-start: 1;
-    grid-row-end: 26;
-    border: 1px solid white; }
+    grid-row-end: 26; }
+    #top-nav .pretty:hover {
+      background-color: #c7d5ed; }
     #top-nav .pretty:hover {
       transition: .1s ease-in;
       color: red; }
@@ -174,32 +179,29 @@ nav {
     grid-column-start: 1;
     grid-column-end: 101;
     grid-row-start: 26;
-    grid-row-end: 51;
-    border: 1px solid white; }
+    grid-row-end: 51; }
     #top-nav .about:hover {
       transition: .1s ease-in;
       color: white;
-      background-color: rgba(0, 0, 0, 0.5); }
+      background-color: #c7d5ed; }
   #top-nav .work {
     grid-column-start: 1;
     grid-column-end: 101;
     grid-row-start: 51;
-    grid-row-end: 76;
-    border: 1px solid white; }
+    grid-row-end: 76; }
     #top-nav .work:hover {
       transition: .1s ease-in;
       color: white;
-      background-color: rgba(0, 0, 0, 0.5); }
+      background-color: #c7d5ed; }
   #top-nav .other {
     grid-column-start: 1;
     grid-column-end: 101;
     grid-row-start: 76;
-    grid-row-end: 101;
-    border: 1px solid white; }
+    grid-row-end: 101; }
     #top-nav .other:hover {
       transition: .1s ease-in;
       color: white;
-      background-color: rgba(0, 0, 0, 0.5); }
+      background-color: #c7d5ed; }
   @media screen and (max-width: 800px) {
     #top-nav {
       width: 100%;
@@ -247,7 +249,7 @@ nav {
 
 .projects {
   display: inline-block;
-  background-color: #4f7399;
+  background-color: #c7d5ed;
   padding: 15px;
   color: white; }
   .projects .project {
@@ -369,7 +371,7 @@ nav {
   font-size: 20.4px;
   font-family: 'Times New Roman'; }
   #butt:hover {
-    background-color: #4f7399;
+    background-color: #c7d5ed;
     transition: .2s ease-in; }
 
 /*# sourceMappingURL=main.css.map */
