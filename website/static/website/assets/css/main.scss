@@ -10,6 +10,12 @@ $header-font-size: 40px;
 $main-font-size: 17px;
 $background-color: rgba(255,255,255,1);
 $highlight-color: rgba(100,100,100,0.5); 
+$text-color: $font-color;
+$base-font-size: $main-font-size;
+$grey-color:       #ccc;
+$grey-color-light: lighten($grey-color, 12%);
+$grey-color-dark:  darken($grey-color, 38%);
+
 $soft-background: rgba(255,255,255,0.5);
 $highlight: rgba(199,213,237,1);
 @mixin media-query($device) {
@@ -392,3 +398,75 @@ h1 {
     transition: .2s ease-in;
   }
 } 
+
+.expand-options {
+  display: inline-block;
+  padding: 3px 6px;
+  .icon {
+    margin-right: 15px;
+    color: $text-color;
+	}
+	&:hover {
+    cursor: pointer;
+    transition: .3s ease-in;
+    color: $text-color;
+    background-color: $grey-color-light;
+  }	
+  color: lighten($grey-color-dark,15%);
+}
+
+.expand-options-save {
+	text-decoration: none;
+  display: inline-block;
+  padding: 3px 6px;
+	border: 1px solid $background-color;
+	//background-color: $highlight-color;
+    .icon {
+    margin-right: 15px;
+    color: $text-color;
+	}
+	&:hover {
+    cursor: pointer;
+    color: $background-color;
+    background-color: $grey-color-dark;
+		transition: .2s ease-in;
+		.icon {
+			color: $highlight-color;
+		}
+  }	
+  color: lighten($grey-color-dark,15%);
+}
+
+
+.save-button {
+	padding: 15px;
+  margin-left: 25px;
+	font-size: $base-font-size;
+		.side {
+		display: inline;
+	}
+	.down {
+		display: none;
+	}
+
+	&:hover {
+		.side {
+			display: none;
+		}
+		.down {
+			display: inline;
+		}
+	}
+
+}
+
+#expand {
+  &:hover { cursor: pointer;
+.icon {
+		color: $highlight;
+	}
+}
+	
+}
+
+

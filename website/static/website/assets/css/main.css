@@ -374,4 +374,52 @@ nav {
     background-color: #c7d5ed;
     transition: .2s ease-in; }
 
+.expand-options {
+  display: inline-block;
+  padding: 3px 6px;
+  color: #919191; }
+  .expand-options .icon {
+    margin-right: 15px;
+    color: black; }
+  .expand-options:hover {
+    cursor: pointer;
+    transition: .3s ease-in;
+    color: black;
+    background-color: #ebebeb; }
+
+.expand-options-save {
+  text-decoration: none;
+  display: inline-block;
+  padding: 3px 6px;
+  border: 1px solid white;
+  color: #919191; }
+  .expand-options-save .icon {
+    margin-right: 15px;
+    color: black; }
+  .expand-options-save:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #6b6b6b;
+    transition: .2s ease-in; }
+    .expand-options-save:hover .icon {
+      color: rgba(100, 100, 100, 0.5); }
+
+.save-button {
+  padding: 15px;
+  margin-left: 25px;
+  font-size: 17px; }
+  .save-button .side {
+    display: inline; }
+  .save-button .down {
+    display: none; }
+  .save-button:hover .side {
+    display: none; }
+  .save-button:hover .down {
+    display: inline; }
+
+#expand:hover {
+  cursor: pointer; }
+  #expand:hover .icon {
+    color: #c7d5ed; }
+
 /*# sourceMappingURL=main.css.map */
