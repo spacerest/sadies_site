@@ -69,6 +69,9 @@ html {
   font-size: 17px;
   letter-spacing: 3px;
   height: 100%; }
+  @media screen and (max-width: 800px) {
+    html {
+      font-size: 13.6px; } }
 
 #top-nav {
   height: 100%;
@@ -87,7 +90,8 @@ html {
     height: 100%; }
     @media screen and (max-width: 800px) {
       .wrap .page {
-        margin-left: 10vw; } }
+        margin-left: 5px;
+        margin-left: 5px; } }
     .wrap .page header {
       width: 100%; }
       .wrap .page header .header-wrap {
@@ -100,14 +104,14 @@ html {
           .wrap .page header .header-wrap {
             margin-top: 44px; } }
         .wrap .page header .header-wrap .subnav {
-          margin-top: 10px; }
+          margin-top: 10px;
+          line-height: 34px; }
           .wrap .page header .header-wrap .subnav a {
             display: inline-block;
             padding: 2px; }
             .wrap .page header .header-wrap .subnav a:hover {
-              background-color: rgba(0, 0, 0, 0.5);
-              color: white;
-              transition: .1s ease-in; }
+              background-color: #cbd1d3;
+              transition: .3s ease-in; }
     .wrap .page .content {
       width: 100%;
       margin-top: 40px; }
@@ -120,16 +124,16 @@ html {
     width: 100%;
     height: 500px;
     line-height: 45px;
-    text-align: center; }
+    text-align: left; }
     .wrap footer .social-media {
       margin-left: 80px; }
       .wrap footer .social-media a {
         color: black;
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0.6);
         padding: 5px;
         border: 2px solid black; }
         .wrap footer .social-media a:hover {
-          background-color: #c7d5ed;
+          background-color: #ffdeca;
           transition: .2s ease-in; }
 
 nav {
@@ -146,7 +150,7 @@ nav {
       width: 100%;
       z-index: 2;
       display: block;
-      font-size: 17px; } }
+      font-size: 11.9px; } }
 
 @media screen and (max-width: 800px) {
   #top-nav {
@@ -167,41 +171,38 @@ nav {
     grid-row-start: 1;
     grid-row-end: 26; }
     #top-nav .pretty:hover {
-      background-color: #c7d5ed; }
+      background-color: #ffdeca; }
     #top-nav .pretty:hover {
-      transition: .1s ease-in;
+      transition: .3s ease-in;
       color: red; }
     #top-nav .pretty img {
-      height: 18vh;
+      height: 16vh;
       max-width: 200px;
-      padding-top: 30px; }
+      padding-top: 2vh; }
   #top-nav .about {
     grid-column-start: 1;
     grid-column-end: 101;
     grid-row-start: 26;
     grid-row-end: 51; }
     #top-nav .about:hover {
-      transition: .1s ease-in;
-      color: white;
-      background-color: #c7d5ed; }
+      transition: .3s ease-in;
+      background-color: #cbd1d3; }
   #top-nav .work {
     grid-column-start: 1;
     grid-column-end: 101;
     grid-row-start: 51;
     grid-row-end: 76; }
     #top-nav .work:hover {
-      transition: .1s ease-in;
-      color: white;
-      background-color: #c7d5ed; }
+      transition: .3s ease-in;
+      background-color: #cbd1d3; }
   #top-nav .other {
     grid-column-start: 1;
     grid-column-end: 101;
     grid-row-start: 76;
     grid-row-end: 101; }
     #top-nav .other:hover {
-      transition: .1s ease-in;
-      color: white;
-      background-color: #c7d5ed; }
+      transition: .3s ease-in;
+      background-color: #cbd1d3; }
   @media screen and (max-width: 800px) {
     #top-nav {
       width: 100%;
@@ -230,6 +231,9 @@ nav {
         grid-row-start: 1;
         grid-row-end: 101; } }
 
+p {
+  line-height: 22.1px; }
+
 #top-nav a {
   display: block;
   text-decoration: underline; }
@@ -249,9 +253,7 @@ nav {
 
 .projects {
   display: inline-block;
-  background-color: #c7d5ed;
-  padding: 15px;
-  color: white; }
+  padding: 15px; }
   .projects .project {
     border-radius: 15px;
     color: black;
@@ -371,7 +373,7 @@ nav {
   font-size: 20.4px;
   font-family: 'Times New Roman'; }
   #butt:hover {
-    background-color: #c7d5ed;
+    background-color: #cbd1d3;
     transition: .2s ease-in; }
 
 .expand-options {
@@ -420,6 +422,6 @@ nav {
 #expand:hover {
   cursor: pointer; }
   #expand:hover .icon {
-    color: #c7d5ed; }
+    color: #cbd1d3; }
 
 /*# sourceMappingURL=main.css.map */
