@@ -3,7 +3,7 @@
 {% block page %}about{% endblock %}
 {% block subnav %}
 {% for project_type in project_types %}
-   <a href="#{{ project_type.lower.split|join:'-' }}">{{ project_type.lower }}<span> &#9733 </span></a>
+   <a onclick=scrollToId("{{ project_type.lower.split|join:'-' }}")>{{ project_type.lower }}<span> &#9733 </span></a>
 {% endfor %}
 {% endblock %}
 {% block content %}

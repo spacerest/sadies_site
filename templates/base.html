@@ -11,9 +11,12 @@
   <link rel="icon" href=""/>
   <link rel="shortcut icon" href="" />
   <link rel="stylesheet" type="text/css" href="{% static "/website/assets/css/main.css" %}" />  
+	<link rel="shortcut icon" type="image/png" href='{% static '/website/assets/images/favicon.png' %}' />
   <title>{% block title %}Sadie Parker{% endblock %}</title>
 <!-!---script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script-->
-<script src="{% static "/website/scripts/animation.js" %}"></script>
+<script src="{% static "/website/assets/scripts/animation.js" %}"></script>
+<script src="{% static "/website/assets/scripts/jquery-3.1.0.min.js" %}"></script>
+<script src="{% static "/website/assets/scripts/app.js" %}"></script>
     
 {% block skripts %}
 {% endblock %}
@@ -40,7 +43,7 @@
 	{% else %}
 <h2>hello</h2>
 {% endif %}
-<div class="subnav">{% block subnav %}{% endblock %}</div>
+<div class="subnav">( {% block subnav %}{% endblock %} )</div>
 </div>
 </header>
 
@@ -52,9 +55,9 @@
   </br>
 <footer style='background-repeat: no-repeat; background-image: url("{% static '/website/assets/images/upside_down.png' %}")'>
   <div class="social-media">
-    <a target="_blank" href="http://github.com/spacerest">gh</a></br>
-    <a target="_blank" href="http://twitter.com/spacerest0">twitter</a></br>
-    <a target="_blank" href="mailto:sadiemparker@gmail.com">email</a></br>
+    <a target="_blank" href="http://github.com/spacerest">github</a></br>
+    <a target="_blank" href=" http://bitbucket.com/spacerest">bitbucket</a></br>
+    <a target="_blank" href="mailto:sadiemparker@gmail.com">sadiemparker @ gmail</a></br>
   </div>
 </footer>
 </div>
