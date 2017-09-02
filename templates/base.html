@@ -22,6 +22,7 @@
 {% endblock %}
 </head>
 <body id="{% block page %}{% endblock %}" onload="window.document.getElementById('body-load').style.opacity='1';">
+<div id="page-title"></div>
 <nav class="{% block nav-selection %}home{% endblock %}">
 <div id="top-nav" class="grid">
     <a href="/" class="pretty"><img src="{% static "/website/assets/images/face_logo.png" %}" /></a>
@@ -53,11 +54,48 @@
       nothing here, check back tomorrow
   {% endblock %}
   </br>
+<div class="back-to-top" onclick=scrollToId('page-title')>
+		<p>^to top^</p>
+		<img src='{% static "/website/assets/images/favicon.png" %}' />
+		</div>
+
+
 <footer style='background-repeat: no-repeat; background-image: url("{% static '/website/assets/images/upside_down.png' %}")'>
   <div class="social-media">
     <a target="_blank" href="http://github.com/spacerest">github</a></br>
     <a target="_blank" href=" http://bitbucket.com/spacerest">bitbucket</a></br>
-    <a target="_blank" href="mailto:sadiemparker@gmail.com">sadiemparker @ gmail</a></br>
+		<div onclick="expandMail()" onmouseleave="hideMail()" class="email">
+    <a >sadiemparker @ gmail</a>
+        <ul class="reply-emails">webmail links:
+						            <li>
+                <p>
+                    <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=sadiemparker%40gmail.com&amp;su=An%20Interesting%20Offer%20For%20U&amp;" target="_blank" class="reply-email gmail"><img class="mail-icon" src="{% static '/website/assets/images/gmail.png' %}" />gmail</a>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <a href="http://compose.mail.yahoo.com/?to=sadiemparker%40gmail.com&amp;subj=An%20Interesting%20Offer%20For%20U&amp;" target="_blank" class="reply-email yahoo"><img class="mail-icon" src="{% static '/website/assets/images/yahoo.png' %}" />yahoo mail</a>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <a href="https://mail.live.com/default.aspx?rru=compose&amp;to=sadiemparker%40gmail.com&amp;subject=An%20Interesting%20Offer%20For%20U&amp;" target="_blank" class="reply-email msmail"><img class="mail-icon" src="{% static '/website/assets/images/outlook.png' %}" />hotmail/outlook/live mail</a>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <a href="http://mail.aol.com/mail/compose-message.aspx?to=sadiemparker%40gmail.com&amp;subject=An%20Interesting%20For%20U&amp;" target="_blank" class="reply-email aol"><img class="mail-icon" src="{% static '/website/assets/images/aim.png' %}" />aol mail</a>
+                </p>
+            </li>
+					<li>
+						or
+								<p>
+										<a href="mailto:sadiemparker@gmail.com"><img class="mail-icon" src="{% static '/website/assets/images/email.png' %}" />default email client</a>
+								</p>
+						</li>
+
+        </ul>
+		</div>
   </div>
 </footer>
 </div>
@@ -65,5 +103,6 @@
 </div>
 <script type="text/javascript">
 </script>
+
 </body>
 </html>
