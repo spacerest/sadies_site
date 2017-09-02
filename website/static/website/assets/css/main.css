@@ -111,7 +111,8 @@ html {
             padding: 2px; }
             .wrap .page header .header-wrap .subnav a:hover {
               background-color: #cbd1d3;
-              transition: .3s ease-in; }
+              transition: .3s ease-in;
+              cursor: pointer; }
     .wrap .page .content {
       width: 100%;
       margin-top: 40px; }
@@ -417,11 +418,66 @@ p {
   .save-button:hover .side {
     display: none; }
   .save-button:hover .down {
-    display: inline; }
+    display: inline;
+    color: #cbd1d3; }
 
 #expand:hover {
   cursor: pointer; }
-  #expand:hover .icon {
-    color: #cbd1d3; }
+
+.email {
+  display: inline-block; }
+  .email:hover {
+    cursor: pointer; }
+  .email ul.reply-emails {
+    overflow: hidden;
+    height: 0;
+    margin-left: 7px;
+    padding-left: 5px;
+    background-color: white;
+    margin-top: -5px;
+    border-left: 2px solid black;
+    border-right: 2px solid black; }
+    .email ul.reply-emails a {
+      border: none !important;
+      background-color: rgba(1, 1, 1, 0) !important;
+      padding: 7px !important;
+      margin: 0 !important;
+      color: blue !important; }
+      .email ul.reply-emails a:hover {
+        text-decoration: underline; }
+
+.mail-icon {
+  height: 14px;
+  width: auto;
+  margin-right: 5px; }
+
+.back-to-top {
+  text-align: center;
+  display: block;
+  position: fixed;
+  bottom: -115px;
+  right: 55px;
+  z-index: 5;
+  -webkit-transition-property: top, bottom;
+  -webkit-transition-duration: 0.5s; }
+  .back-to-top p {
+    border-radius: 10px;
+    padding: 6px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white; }
+    .back-to-top p:hover {
+      cursor: pointer;
+      background-color: rgba(0, 0, 0, 0.8);
+      transition: .3s ease-in-out; }
+  .back-to-top img {
+    height: 20px;
+    width: auto;
+    display: inline; }
+  @media screen and (max-width: 800px) {
+    .back-to-top {
+      width: 60px; } }
+
+.bot-show {
+  bottom: 15px; }
 
 /*# sourceMappingURL=main.css.map */
