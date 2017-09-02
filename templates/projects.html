@@ -28,14 +28,12 @@
 </div>
 <a href="{{ project.link }}" target="_blank" >
   <div class="square">
-    {% with '/website/assets/images/'|add:project.image_name|add:'.png' as image_path %}
 	<div class="overlay">
-          <img src="{% static image_path %}" />
+          <img src="{{ MEDIA_URL }}{{ project.proj_image }}" />
 	  <div class="inner-text">
 	    	<p>view project</p>
 	  </div>
 	  </div>
-    {% endwith %}
   </div>
 </a>
 </div>
