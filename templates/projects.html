@@ -15,27 +15,36 @@
 <h3 class="sub-title" id="{{project_type.lower.split|join:'-'}}">{{ project_type.lower }}</h3>
 {% for project in projects %}
 <div class="project">
-<div class="descrip">
 <ul>
-<li class="descrip"><h4>{{ project.description }}</h4></li>
+<li class="proj-title"><h4>{{ project.title }}</h4></li>
+{% if project.source_code %}
+<li class="sourcecode"><h4><a target="_blank" href="{{project.source_code}}">Source code</a></h4></li>
+{% endif %}
 </ul>
-</div>
 <div class="info">
 <ul>
 <li><h4>Tools</h4><h5>{{ project.tools_used }}</h5></li>
 <li><h4>Last updated</h4><h5>{{ project.last_updated }}</h5></li>
 </ul>
+
+
 </div>
-<a href="{{ project.link }}" target="_blank" >
   <div class="square">
+{% if project.link %}
+		<a href="{{ project.link }}" target="_blank" >
 	<div class="overlay">
+		<div class="inner-text">
+<img src='{% static "/website/assets/images/favicon.png" %}' />
+	    	<p>view</p>
+<img src='{% static "/website/assets/images/favicon.png" %}' />
+	  </div>
+	</div>
+		</a>
+{% endif %}
+			<div class="proj-image">
           <img src="{{ MEDIA_URL }}{{ project.proj_image }}" />
-	  <div class="inner-text">
-	    	<p>view project</p>
-	  </div>
-	  </div>
+			</div>
   </div>
-</a>
 </div>
 {% endfor %}
 {% endif %}

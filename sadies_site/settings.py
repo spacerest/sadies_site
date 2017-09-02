@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('SADIES_SITE_DJANGO_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sadieparker.net','http://sadieparker.net','www.sadieparker.net','https://www.sadieparker.net','https://sadieparker.net','http://www.sadieparker.net','127.0.0.1']
 
 
 # Application definition
@@ -63,7 +63,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-		'django.template.context_processors.media',
+								'django.template.context_processors.media',
             ],
         },
     },
@@ -121,6 +121,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_URL = '/media/'
+STATIC_ROOT = '/usr/share/nginx/html/static/'
 
+STATICFILES_DIRS = [
+	os.path.join(BASE_DIR, 'website/static'),
+]
+
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

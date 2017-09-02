@@ -40,6 +40,7 @@ $brightlight: rgba(259,222,202,1);
 body {
   height: 100%;
   display: inline-block;
+	max-width: 100%!important;
 }
 
 a {
@@ -71,14 +72,16 @@ html {
 }
 .wrap {
   height: 100%;
-  width: 100vw;
+  width: 100%;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
   .page {
     margin-left: $nav-width + 40px;
     margin-right: 10vw;
     display: inline-block;
     height: 100%;
     @include media-query($on-palm) {
-      margin-left: 5px;
 			margin-left: 5px;
     }
     header {
@@ -264,37 +267,54 @@ h1 {
   display: inline-block;
     padding: 15px;
     .project {
-    border-radius: 15px;
-    color: $font-color;
-    padding: 15px;
-    background-color: $background-color;
-    display: inline-block;
-    width: 100%;
-    padding-bottom: 25px;
-    margin-bottom: 25px;
-    @include media-query($on-palm){
-      text-align: center;
-    }
-    .descrip, .info {
-	  display: inline-block;
+    	color: $font-color;
+    	padding: 15px;
+      box-shadow: 0px 0px 8px 3px lighten($highlight, 5%);
+    	display: inline-block;
+    	width: 100%;
+    	padding-bottom: 25px;
+    	margin-bottom: 25px;
+    	@include media-query($on-palm){
+    	  text-align: center;
+    	}
+			.sourcecode {
+				margin-top: 15px!important;
+				a {
+					font-size: $base-font-size * .8;
+					font-weight: 100;
+					color: blue;
+					text-decoration: underline;
+				}
+			}
+    	.descrip, .info, .proj-title {
+	  		display: inline-block;
      }
+		.proj-title {
+			padding: 10px 10px 10px 0;
+			border-radius: 5px;
+			font-size: $main-font-size*1.6;
+		}
         .descrip {
+					 background-color: rgba(60,60,60,1);
+					 color: $background-color;
            width: 100%;
            margin-bottom: 19px;
-           text-align: center;
+					 border-radius: 7px;
+           padding-top: 8px;
          }
         .info {
           float: left;
-	  width: 55%;
-	  text-align: left;
+	  			width: 55%;
+	  			text-align: left;
           line-height: $main-font-size*1.2;
           margin-top: 6vw;
+					color: #666;
           h4 {
             font-weight: 600;
           }
 	  @include media-query($on-palm){
 	    width: 100%;
-            padding-bottom: 20px;
+      padding-bottom: 20px;
 	    margin-top: 0;
 	  }
         }
@@ -314,78 +334,76 @@ h1 {
          }
     .square {
       float: right;
+			position: relative;
       height: 20vw;
       width: 20vw;
       display: inline-block;
       margin: 2px;
       @include media-query($on-palm){
-	width: 55vw;
-	height: 55vw;
-	float: none;
+				width: 35vw;
+				height: 35vw;
+					min-width: 122px;
+					min-height: 122px;
+
+				float: none;
       }
-          .overlay {
-            background-color: red;
-	    float: left;
+          .overlay, .proj-image, a {
+	    			float: left;
             height: 20vw;
             width: 20vw;
-	    position: relative;
+	    			position: absolute;
+						top: 0;
+						left: 0;
             display: inline-block;
-		 @include media-query($on-palm){
-		    width: 55vw;
-		    height: 55vw; 
-		  }
+		 				@include media-query($on-palm){ 
+							 width: 35vw;
+		 				   height: 35vw; 
+								min-width: 122px;
+								min-height: 122px;
+
+		 				 }
             &:hover {
-	      background-color: $soft-font;
-	      transition: .2s ease-out;
-	    }
-	    img {
+	    			}
+	    			img {
           	  width: 20vw;
           	  height: 20vw;
           	  display: inline-block;
           	  text-align: center;
           	  z-index: 1;
-		  position: absolute;
-		  top: 0;
-		  left: 0;
-		  @include media-query($on-palm){
-		    width: 55vw;
-		    height: 55vw; 
-		  }
-          	}
-	      .inner-text {
-		width: 20vw;
-		height: 20vw;
-		position: absolute;
-		display: inline-block;
-	        z-index: 2;
-		top: 0;
-		left: 0;
-		color: $background-color;
-		text-align: center;
-		 @include media-query($on-palm){
-		    width: 55vw;
-		    height: 55vw; 
-		  }
-		p {
-		  display: none;
-		  width: 100%;
-		  height: 50px;
-		  margin-top: 8vw;
-		  line-height: 50px;
-		  @include media-query($on-palm){
-		    height: 65px;
-		    margin-top: 25vw;
-		    line-height: 65px;
-		  }
+		  				@include media-query($on-palm){
+		  				  width: 35vw;
+		  				  height: 35vw; 
+							  min-width: 122px;
+								min-height: 122px;
+		  				}
+						}
+						}
+						.proj-image {
+							z-index: 1;
+						}
+						.overlay {
+							z-index: 2;
+							text-align: center;
+							.inner-text {
+								display: none;
+					
+							}
+							&:hover {
+								background-color: rgba(0,0,0,.7);
+								.inner-text {
+									display: inline-block;
+									color: $background-color;
+									padding-top: 10%;
+									img {
+										height: 35px!important;
+										width: auto!important;
+										min-width: 35px!important;
+										min-height: 35px!important;
+									}
+								}
+							}
+						}
 		}
-		&:hover {
-		  p {
-		    transition: 2s ease-in;
-		    background-color: $soft-font;
-		    display: inline-block;
-		  }
-		}
-		}}}
 }}
    
 #butt {

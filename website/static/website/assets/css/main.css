@@ -51,7 +51,8 @@ table {
 
 body {
   height: 100%;
-  display: inline-block; }
+  display: inline-block;
+  max-width: 100% !important; }
 
 a {
   color: black;
@@ -82,7 +83,10 @@ html {
 
 .wrap {
   height: 100%;
-  width: 100vw; }
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
   .wrap .page {
     margin-left: 240px;
     margin-right: 10vw;
@@ -90,7 +94,6 @@ html {
     height: 100%; }
     @media screen and (max-width: 800px) {
       .wrap .page {
-        margin-left: 5px;
         margin-left: 5px; } }
     .wrap .page header {
       width: 100%; }
@@ -256,10 +259,9 @@ p {
   display: inline-block;
   padding: 15px; }
   .projects .project {
-    border-radius: 15px;
     color: black;
     padding: 15px;
-    background-color: white;
+    box-shadow: 0px 0px 8px 3px #d9dddf;
     display: inline-block;
     width: 100%;
     padding-bottom: 25px;
@@ -267,18 +269,33 @@ p {
     @media screen and (max-width: 800px) {
       .projects .project {
         text-align: center; } }
-    .projects .project .descrip, .projects .project .info {
+    .projects .project .sourcecode {
+      margin-top: 15px !important; }
+      .projects .project .sourcecode a {
+        font-size: 13.6px;
+        font-weight: 100;
+        color: blue;
+        text-decoration: underline; }
+    .projects .project .descrip, .projects .project .info, .projects .project .proj-title {
       display: inline-block; }
+    .projects .project .proj-title {
+      padding: 10px 10px 10px 0;
+      border-radius: 5px;
+      font-size: 27.2px; }
     .projects .project .descrip {
+      background-color: #3c3c3c;
+      color: white;
       width: 100%;
       margin-bottom: 19px;
-      text-align: center; }
+      border-radius: 7px;
+      padding-top: 8px; }
     .projects .project .info {
       float: left;
       width: 55%;
       text-align: left;
       line-height: 20.4px;
-      margin-top: 6vw; }
+      margin-top: 6vw;
+      color: #666; }
       .projects .project .info h4 {
         font-weight: 600; }
       @media screen and (max-width: 800px) {
@@ -299,71 +316,62 @@ p {
         font-style: italic; }
     .projects .project .square {
       float: right;
+      position: relative;
       height: 20vw;
       width: 20vw;
       display: inline-block;
       margin: 2px; }
       @media screen and (max-width: 800px) {
         .projects .project .square {
-          width: 55vw;
-          height: 55vw;
+          width: 35vw;
+          height: 35vw;
+          min-width: 122px;
+          min-height: 122px;
           float: none; } }
-      .projects .project .square .overlay {
-        background-color: red;
+      .projects .project .square .overlay, .projects .project .square .proj-image, .projects .project .square a {
         float: left;
         height: 20vw;
         width: 20vw;
-        position: relative;
+        position: absolute;
+        top: 0;
+        left: 0;
         display: inline-block; }
         @media screen and (max-width: 800px) {
-          .projects .project .square .overlay {
-            width: 55vw;
-            height: 55vw; } }
-        .projects .project .square .overlay:hover {
-          background-color: rgba(0, 0, 0, 0.5);
-          transition: .2s ease-out; }
-        .projects .project .square .overlay img {
+          .projects .project .square .overlay, .projects .project .square .proj-image, .projects .project .square a {
+            width: 35vw;
+            height: 35vw;
+            min-width: 122px;
+            min-height: 122px; } }
+        .projects .project .square .overlay img, .projects .project .square .proj-image img, .projects .project .square a img {
           width: 20vw;
           height: 20vw;
           display: inline-block;
           text-align: center;
-          z-index: 1;
-          position: absolute;
-          top: 0;
-          left: 0; }
+          z-index: 1; }
           @media screen and (max-width: 800px) {
-            .projects .project .square .overlay img {
-              width: 55vw;
-              height: 55vw; } }
+            .projects .project .square .overlay img, .projects .project .square .proj-image img, .projects .project .square a img {
+              width: 35vw;
+              height: 35vw;
+              min-width: 122px;
+              min-height: 122px; } }
+      .projects .project .square .proj-image {
+        z-index: 1; }
+      .projects .project .square .overlay {
+        z-index: 2;
+        text-align: center; }
         .projects .project .square .overlay .inner-text {
-          width: 20vw;
-          height: 20vw;
-          position: absolute;
-          display: inline-block;
-          z-index: 2;
-          top: 0;
-          left: 0;
-          color: white;
-          text-align: center; }
-          @media screen and (max-width: 800px) {
-            .projects .project .square .overlay .inner-text {
-              width: 55vw;
-              height: 55vw; } }
-          .projects .project .square .overlay .inner-text p {
-            display: none;
-            width: 100%;
-            height: 50px;
-            margin-top: 8vw;
-            line-height: 50px; }
-            @media screen and (max-width: 800px) {
-              .projects .project .square .overlay .inner-text p {
-                height: 65px;
-                margin-top: 25vw;
-                line-height: 65px; } }
-          .projects .project .square .overlay .inner-text:hover p {
-            transition: 2s ease-in;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: inline-block; }
+          display: none; }
+        .projects .project .square .overlay:hover {
+          background-color: rgba(0, 0, 0, 0.7); }
+          .projects .project .square .overlay:hover .inner-text {
+            display: inline-block;
+            color: white;
+            padding-top: 10%; }
+            .projects .project .square .overlay:hover .inner-text img {
+              height: 35px !important;
+              width: auto !important;
+              min-width: 35px !important;
+              min-height: 35px !important; }
 
 #butt {
   background-color: rgba(0, 0, 0, 0.5);
