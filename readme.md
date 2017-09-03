@@ -1,5 +1,6 @@
 todo:
 - add meta tag and description
+-check for browser grid support on desktop version
 
 todid:
 - change lineheights for mobile
