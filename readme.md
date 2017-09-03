@@ -1,5 +1,5 @@
 todo:
-
+- add meta tag and description
 
 todid:
 - change lineheights for mobile
