@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="canonical" href="http://localhost:8000/">
   <link rel="alternate" type="application/rss+xml" title="Sadie Parker" href="/feed.xml">
   <link rel="apple-touch-icon" href="" />
   <link rel="icon" href=""/>
@@ -44,15 +44,17 @@
 	{% else %}
 <h2>hello</h2>
 {% endif %}
-<div class="subnav">( {% block subnav %}{% endblock %} )</div>
+<div class="subnav">{% block subnav %}{% endblock %}</div>
 </div>
 </header>
 
 
 <div class="content">
+	<div class="page-content">
   {% block content %}
       nothing here, check back tomorrow
   {% endblock %}
+	</div>
   </br>
 <div class="back-to-top" onclick=scrollToId('page-title')>
 		<p>^to top^</p>
@@ -61,11 +63,11 @@
 
 
 <footer style='background-repeat: no-repeat; background-image: url("{% static '/website/assets/images/upside_down.png' %}")'>
-  <div class="social-media">
+  <div class="social-media" id="social-links">
     <a target="_blank" href="http://github.com/spacerest">github</a>
     <a target="_blank" href=" http://bitbucket.com/spacerest">bitbucket</a></br>
 		<a target="_blank" href="https://www.linkedin.com/in/sadie-parker-70267b4b/">linkedin</a></br>
-		<div onclick="expandMail()" onmouseleave="hideMail()" class="email">
+		<div onclick="expandMail();" onmouseleave="hideMail()" class="email">
     <a >sadiemparker @ gmail</a>
         <ul class="reply-emails">webmail links:
 						            <li>
@@ -80,7 +82,7 @@
             </li>
             <li>
                 <p>
-                    <a href="https://mail.live.com/default.aspx?rru=compose&amp;to=sadiemparker%40gmail.com&amp;subject=An%20Interesting%20Offer%20For%20U&amp;" target="_blank" class="reply-email msmail"><img class="mail-icon" src="{% static '/website/assets/images/outlook.png' %}" />hotmail/outlook/live mail</a>
+                    <a href="https://mail.live.com/default.aspx?rru=compose&amp;to=sadiemparker%40gmail.com&amp;subject=An%20Interesting%20Offer%20For%20U&amp;" target="_blank" class="reply-email msmail"><img class="mail-icon" src="{% static '/website/assets/images/outlook.png' %}" />hotmail/outlook</a>
                 </p>
             </li>
             <li>
