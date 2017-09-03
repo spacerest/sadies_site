@@ -7,7 +7,9 @@ function scrollToId(x){
 
 function expandMail() {
 	$(".reply-emails").animate({height:220},300);
-}
+	$('html, body').animate({ 
+		scrollTop: $(window).scrollTop() + 150}, 400);
+};
 
 function hideMail() {
 	$(".reply-emails").animate({height:0},200);
