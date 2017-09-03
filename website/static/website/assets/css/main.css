@@ -108,7 +108,8 @@ html {
             margin-top: 44px; } }
         .wrap .page header .header-wrap .subnav {
           margin-top: 10px;
-          line-height: 34px; }
+          line-height: 34px;
+          display: block; }
           .wrap .page header .header-wrap .subnav a {
             display: inline-block;
             padding: 2px; }
@@ -116,6 +117,10 @@ html {
               background-color: #cbd1d3;
               transition: .3s ease-in;
               cursor: pointer; }
+          @media screen and (max-width: 800px) {
+            .wrap .page header .header-wrap .subnav {
+              line-height: 17px;
+              letter-spacing: 1px; } }
     .wrap .page .content {
       width: 100%;
       margin-top: 40px; }
@@ -254,6 +259,10 @@ p {
   width: 100%;
   border-bottom: 2px solid black;
   line-height: 80px; }
+  @media screen and (max-width: 800px) {
+    .sub-title {
+      line-height: 40px;
+      font-size: 28px !important; } }
 
 .projects {
   display: inline-block;
@@ -282,6 +291,9 @@ p {
       padding: 10px 10px 10px 0;
       border-radius: 5px;
       font-size: 27.2px; }
+      @media screen and (max-width: 800px) {
+        .projects .project .proj-title {
+          font-size: 20.4px; } }
     .projects .project .descrip {
       background-color: #3c3c3c;
       color: white;
