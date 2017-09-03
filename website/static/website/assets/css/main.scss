@@ -99,6 +99,7 @@ html {
 	.subnav {
 	   margin-top: 10px;
 		 line-height: $base-font-size*2;
+			display: block;
            a {
              display: inline-block;
              padding: 2px;
@@ -108,6 +109,10 @@ html {
 							 cursor: pointer;
 	     }
 	   }
+		 @include media-query($on-palm) {
+				line-height: $base-font-size;
+        letter-spacing: 1px;
+		 }
 	}
       }
     }
@@ -261,6 +266,10 @@ h1 {
     width: 100%;
     border-bottom: 2px solid $font-color;
     line-height: $header-font-size*2;
+		@include media-query($on-palm){
+       line-height: $header-font-size;
+       font-size: $header-font-size*.7!important;
+		}
   }
 
 .projects{
@@ -293,6 +302,9 @@ h1 {
 			padding: 10px 10px 10px 0;
 			border-radius: 5px;
 			font-size: $main-font-size*1.6;
+			@include media-query($on-palm) {
+				font-size: $main-font-size* 1.2;
+			}
 		}
         .descrip {
 					 background-color: rgba(60,60,60,1);
