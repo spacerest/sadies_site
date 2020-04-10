@@ -46,9 +46,6 @@ table {
   border-spacing: 0; }
 
 /* CLEARFIX */
-#body-load {
-  opacity: 0;
-  transition: .5s ease-in; }
 
 body {
   height: 100%;
@@ -199,10 +196,11 @@ nav {
     #top-nav .pretty:hover {
       background-color: #ffdeca;
       transition: .3s ease-in; }
-    #top-nav .pretty img {
-      height: 16vh;
-      max-width: 200px;
-      margin-top: 1vh; }
+    #top-nav .pretty div {
+      height: 100%;
+      width: 100%;
+      margin-top: 1vh;
+      background-size: auto; }
   #top-nav .about {
     grid-column-start: 1;
     grid-column-end: 101;
@@ -236,7 +234,7 @@ nav {
         grid-column-end: 26;
         grid-row-start: 1;
         grid-row-end: 101; }
-        #top-nav .pretty img {
+        #top-nav .pretty div {
           height: 33px;
           padding-top: 5px; }
       #top-nav .about {
@@ -263,9 +261,12 @@ nav {
     max-width: 23vw;
     display: inline-block;
     float: left; }
-    .pretty img, .about img, .work img, .other img {
+    .about img, .work img, .other img {
       height: 33px;
-      padding-top: 5px; } }
+      padding-top: 5px; }
+    .pretty div {
+      padding-top: 5px;
+	} }
 p {
   line-height: 22.1px; }
 
@@ -537,5 +538,18 @@ a.expand-options-save {
   @media screen and (max-width: 800px) {
     .bot-show {
       bottom: 6px; } }
+
+.background-im {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%; 
+  background-size: cover;
+
+}
+
+.blurme {
+  -webkit-filter: url("#myblurfilter");
+  filter: url("#myblurfilter");
+}
 
 /*# sourceMappingURL=main.css.map */

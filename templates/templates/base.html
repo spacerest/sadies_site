@@ -17,15 +17,21 @@
 <script src="{% static "/website/assets/scripts/animation.js" %}"></script>
 <script src="{% static "/website/assets/scripts/jquery-3.1.0.min.js" %}"></script>
 <script src="{% static "/website/assets/scripts/app1.1.js" %}"></script>
-    
+     
 {% block skripts %}
 {% endblock %}
 </head>
 <body id="{% block page %}{% endblock %}" onload="window.document.getElementById('body-load').style.opacity='1';">
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="height: 0px; width: 0px; display: block;">
+    <filter id="myblurfilter" width="130%" height="130%">
+    	<feGaussianBlur stdDeviation="9" result="blur" />
+    </filter>
+  </svg>
 <div id="page-title"></div>
 <nav class="{% block nav-selection %}home{% endblock %}">
 <div id="top-nav" class="grid">
-    <a href="/" class="pretty"><img src="{% static "/website/assets/images/face_logo.png" %}" /></a>
+    <a href="/" class="pretty">
+    </a>
     <a href="/about/" class="about">about
     </a>
     <a href="/projects/" class="work">projects

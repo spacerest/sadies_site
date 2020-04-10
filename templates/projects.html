@@ -1,12 +1,22 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block page %}about{% endblock %}
+{% block skripts %}
+
+<script src="{% static '/website/assets/scripts/image-load.js' %}"></script>
+{% endblock %}
 {% block subnav %}
 {% for project_type in project_types %}
    <a onclick=scrollToId("{{ project_type.lower.split|join:'-' }}")>{{ project_type.lower }}<span> &#9733 </span></a>
 {% endfor %}
 {% endblock %}
 {% block content %}
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="height: 0px; width: 0px; display: block;">
+    <filter id="myblurfilter" width="130%" height="130%">
+    	<feGaussianBlur stdDeviation="9" result="blur" />
+    </filter>
+  </svg>
+
 
 {% if project_types %}
 <div class="projects">
@@ -46,7 +56,8 @@
 		</a>
 {% endif %}
 			<div class="proj-image">
-          <img src="{{ MEDIA_URL }}{{ project.proj_image }}" />
+          <div class="blurme background-im" id="project-{{project.id}}" style="background-image: url('{{ project.image_data_uri }}');"></div>
+          <img src="{{ MEDIA_URL }}{{ project.proj_image }}" onload="hideUri('project-{{project.id}}', '{{project.proj_image.url}}')" style="display:none;" />
 			</div>
   </div>
 </div>
