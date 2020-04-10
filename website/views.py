@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.db import models
-from website.models import Project, ProjectType
+from website.models import Project, ProjectType, Review
 import collections
 
 def index(request):
@@ -16,5 +16,8 @@ def findpage(request, nav):
             projects = Project.objects.filter(project_type=x).order_by('priority')
             if len(projects) != 0:
                 project_dict[x.title] = projects
-        return render(request, 'projects.html', { 'project_types': project_dict, 'nav':nav, 'page_title': 'Home' }) 
+        return render(request, 'projects.html', { 'project_types': project_dict, 'nav':nav, 'page_title': 'Home' })
+    elif nav == 'contextualreviews':
+        reviews = Review.objects.all()
+        return render(request, 'contextual-reviews.html', {'reviews': reviews, 'nav':nav, 'page_title': 'Contextual Reviews' })
     return render(request, '%s.html' % nav, {'page_title': 'Home', 'nav':nav})

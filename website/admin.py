@@ -8,4 +8,5 @@ from .models import *
 
 admin.site.register(Project)
 admin.site.register(ProjectType)
+admin.site.register(Review)
 
