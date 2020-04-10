@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page %}about{% endblock %}
+{% block subnav %}
+{% for review in reviews %}
+   <a onclick=scrollToId("{{ review.album_name.lower.split|join:'-' }}")>{{ review.album_name.lower }}<span> &#9733 </span></a>
+{% endfor %}
+{% endblock %}
+{% block content %}
+
+<div class="projects reviews">
+{% if reviews %}
+{% for review in reviews %}
+<h3 class="sub-title" id="{{review.album_name.lower.split|join:'-'}}">{{ review.album_title.lower }}</h3>
+<div class="project">
+<ul>
+    <li class="proj-title"><h4>{{ review.artist_name }} - {{ review.album_name }}</h4></li>
+{% if review.review_text %}
+<li class="descrip"><h4>{{ review.review_text|linebreaks }}</h4></li>
+{% endif %}
+</ul>
+<div class="info">
+<ul>
+<li><h4>Date posted:</h4><h5>{{ review.date_reviewed }}</h5></li>
+</ul>
+
+
+</div>
+  <div class="square">
+{% if review.link %}
+		<a href="{{ review.link }}" target="_blank" >
+	<div class="overlay">
+		<div class="inner-text">
+<img src='{% static "/website/assets/images/favicon.png" %}' />
+	    	<p>album</p>
+<img src='{% static "/website/assets/images/favicon.png" %}' />
+	  </div>
+	</div>
+		</a>
+{% endif %}
+			<div class="proj-image">
+          <img src="{{ MEDIA_URL }}{{ review.album_image }}" />
+			</div>
+  </div>
+</div>
+{% endfor %}
+{% endif %}
+</div>
+{% endblock %}

@@ -20,10 +20,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SADIES_SITE_DJANGO_KEY') 
+SECRET_KEY = "dsrkf)-m7ct%!*0fg&+xdb-(boigm%g1fd_k"#os.environ.get('SADIES_SITE_DJANGO_KEY') 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False 
 
 ALLOWED_HOSTS = ['sadieparker.net','http://sadieparker.net','www.sadieparker.net','https://www.sadieparker.net','https://sadieparker.net','http://www.sadieparker.net','127.0.0.1']
 
@@ -121,7 +121,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = '/usr/share/nginx/html/static/'
+STATIC_ROOT = '/usr/share/nginx/websites/sadies_site/static/'
 
 STATICFILES_DIRS = [
 	os.path.join(BASE_DIR, 'website/static'),
@@ -132,5 +132,5 @@ if DEBUG:
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 else:
     MEDIA_URL = '/media/'
-    MEDIA_ROOT = '/usr/share/nginx/html/media/'
+    MEDIA_ROOT = '/usr/share/nginx/websites/sadies_site/media/'
 
