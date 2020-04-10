@@ -6,3 +6,4 @@ media/
 *.swo
 *.pyc
 __keys.py
+venv
