@@ -1,0 +1,8 @@
+db.sqlite3
+media/
+**/images/
+.DS_Store
+*.swp
+*.swo
+*.pyc
+__keys.py
